@@ -19,6 +19,6 @@ from index.func import create_report, test_bot
 
 
 if __name__ == '__main__':
-    test_bot.consume()
-    # # test_bot.multi_process_consume(4)
+    # test_bot.consume()
+    test_bot.multi_process_consume(4)
 
