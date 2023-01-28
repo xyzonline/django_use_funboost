@@ -66,10 +66,10 @@ ALWAYS_ADD_KAFKA_HANDLER_IN_TEST_ENVIRONENT = False
 
 MONGO_URL = 'mongodb://myUserAdmin:mimamiama@127.0.0.1:27016/admin'
 
-DEFAULUT_USE_COLOR_HANDLER = True  # 是否默认使用有彩的日志。
-DISPLAY_BACKGROUD_COLOR_IN_CONSOLE = True  # 在控制台是否显示彩色块状的日志。为False则不使用大块的背景颜色。
-AUTO_PATCH_PRINT = True  # 是否自动打print的猴子补丁，如果打了猴子补丁，print自动变色和可点击跳转。
-SHOW_PYCHARM_COLOR_SETINGS = True  # 有的人很反感启动代码时候提示教你怎么优化pycahrm控制台颜色，可以把这里设置为False
+DEFAULUT_USE_COLOR_HANDLER = False  # 是否默认使用有彩的日志。
+DISPLAY_BACKGROUD_COLOR_IN_CONSOLE = False  # 在控制台是否显示彩色块状的日志。为False则不使用大块的背景颜色。
+AUTO_PATCH_PRINT = False  # 是否自动打print的猴子补丁，如果打了猴子补丁，print自动变色和可点击跳转。
+SHOW_PYCHARM_COLOR_SETINGS = False  # 有的人很反感启动代码时候提示教你怎么优化pycahrm控制台颜色，可以把这里设置为False
 
 DEFAULT_ADD_MULTIPROCESSING_SAFE_ROATING_FILE_HANDLER = False  # 是否默认同时将日志记录到记log文件记事本中。
 LOG_FILE_SIZE = 100  # 单位是M,每个文件的切片大小，超过多少后就自动切割
@@ -92,7 +92,7 @@ LOG_FILE_HANDLER_TYPE 这个值可以设置为 1 2 3 4 5 四种值，
    这个是采用了文件锁，多进程安全切割，文件锁在linux上使用fcntl性能还行，win上使用win32con性能非常惨。按大小切割建议不要选第5个个filehandler而是选择第1个。
 """
 
-LOG_LEVEL_FILTER = logging.DEBUG  # 默认日志级别，低于此级别的日志不记录了。例如设置为INFO，那么logger.debug的不会记录，只会记录logger.info以上级别的。
+LOG_LEVEL_FILTER = logging.INFO  # 默认日志级别，低于此级别的日志不记录了。例如设置为INFO，那么logger.debug的不会记录，只会记录logger.info以上级别的。
 
 RUN_ENV = 'test'
 
@@ -127,4 +127,4 @@ FORMATTER_DICT = {
         f'({computer_ip},{computer_name})-[p%(process)d_t%(thread)d] %(asctime)s - %(name)s - "%(filename)s:%(lineno)d" - %(levelname)s - %(message)s', "%Y-%m-%d %H:%M:%S"),  # 对7改进，带进程和线程显示的日志模板以及ip和主机名。
 }
 
-FORMATTER_KIND = 5  # 如果get_logger不指定日志模板，则默认选择第几个模板
+FORMATTER_KIND = 7  # 如果get_logger不指定日志模板，则默认选择第几个模板
